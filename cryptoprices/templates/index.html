@@ -11,7 +11,7 @@
     <ul id="gold-list"></ul>
 
     <script>
-        fetch('/api/pric')
+        fetch('/api/prices')
             .then(response => response.json())
             .then(data => {
                 const cryptoList = document.getElementById('crypto-list');
