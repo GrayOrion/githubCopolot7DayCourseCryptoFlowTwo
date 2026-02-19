@@ -7,7 +7,7 @@ app = Flask(__name__)
 def fetch_crypto_prices():
     url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,dogecoin,binancecoin,cardano,solana,polkadot,shiba-inu,litecoin&vs_currencies=usd"
     response = requests.get(url)
-    if response.status_code == 200:
+    if response.statuscode == 200:
         return response.json()
     else:
         return {crypto: {"usd": "Error fetching price"} for crypto in ["Bitcoin", "Ethereum", "Dogecoin", "BinanceCoin", "Cardano", "Solana", "Polkadot", "Shiba Inu", "Litecoin"]}
